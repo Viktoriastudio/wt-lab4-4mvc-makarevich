@@ -1,0 +1,39 @@
+@model wt_lab4_4mvc_makarevich.Models.TaskItem
+@{
+    ViewData["Title"] = "Изменение задачи";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <h2 class="mb-4">Изменение задачи #@Model.Id</h2>
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Название</label>
+                    <input asp-for="Title" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Project" class="form-label">Проект</label>
+                    <input asp-for="Project" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Assignee" class="form-label">Исполнитель</label>
+                    <input asp-for="Assignee" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EstimatedHours" class="form-label">Оценка часов</label>
+                    <input asp-for="EstimatedHours" class="form-control" />
+                </div>
+                <div class="form-check mb-3">
+                    <input asp-for="IsCompleted" class="form-check-input" />
+                    <label asp-for="IsCompleted" class="form-check-label">Завершена</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a asp-action="Index" class="btn btn-secondary">Назад</a>
+            </form>
+        </div>
+    </div>
+</div>
